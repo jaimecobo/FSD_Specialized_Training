@@ -1,0 +1,36 @@
+<!-- <p>sign-in works!</p> -->
+
+<div class="border-bottom text-center">
+    <h1>Sign In</h1>
+</div>
+
+<div class="text-center">
+    <div class="formGroup mt-2 mb-2">
+        <input type="text" class="formControl" placeholder="Email Address" #userName required>
+    </div>
+
+    <div class="formGroup mt-2 mb-2">
+        <input type="password" class="formControl" placeholder="Password" #userPassword required>
+    </div>
+
+    <!-- Calling SignIn Api from AuthService -->
+    <button type="button" class="btn btn-primary btn-large" (click)="authService.SignIn(userName.value, userPassword.value)">
+        Log In
+    </button>
+
+    <h4>Or</h4>
+
+    <!-- Calling GoogleAuth Api from AuthService -->
+    <button type="button" class="btn btn-primary btn-large" (click)="authService.GoogleAuth()">
+        Log in with Google
+    </button>
+
+    <div class="mt-3">
+        <a routerLink="/forgot-password">Forgot Password?</a>
+    </div>
+
+    <div>
+        Don't have an account?<a routerLink="/register-user"> Sign Up</a>
+    </div>
+
+</div>  

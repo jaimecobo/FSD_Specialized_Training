@@ -1,0 +1,28 @@
+<!-- <p>dashboard works!</p> -->
+
+<div class="border-bottom text-center">
+    <h1>User Profile</h1>
+</div>
+
+<!-- Show user data when logged in -->
+<div *ngIf="authService.userData as user">
+
+    <div class="row text-center">
+        <div class="media-body">
+            <img class="rounded-circle mt-2" style="width:180px; height: 180px; " src="{{(user.photoURL) ? user.photoURL : 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png'}}"
+            alt="{{user.displayName}}">
+
+            <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
+
+            <p>User ID: <strong>{{user.uid}}</strong></p>
+
+            <p>Email: <strong>{{user.email}}</strong></p>
+
+            <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
+
+            <button type="button" class="btn btn-primary" (click)="authService.SignOut()">
+                Log out
+            </button>
+        </div>
+    </div>
+</div>
